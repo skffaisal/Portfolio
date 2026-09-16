@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shaikh Faisal — Backend &amp; Automation Engineer</title>
+<title>Shaikh Faisal, Backend and Automation Engineer</title>
 <meta name="description" content="Shaikh Faisal builds backend systems, APIs and AI automation. Bengaluru, India. 4+ years shipping end to end.">
 <meta name="theme-color" content="#0F1E26">
-<meta property="og:title" content="Shaikh Faisal — Backend &amp; Automation Engineer">
+<meta property="og:title" content="Shaikh Faisal, Backend and Automation Engineer">
 <meta property="og:description" content="I build the half of the product nobody sees: APIs, pipelines, and the automation that runs them.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +39,7 @@
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:clip}
 body{
+  -webkit-tap-highlight-color:rgba(78,124,168,.2);
   margin:0;background:var(--paper);color:var(--ink);
   font-family:var(--sans);font-size:clamp(1rem,.95rem + .2vw,1.0625rem);
   line-height:1.6;-webkit-font-smoothing:antialiased;
@@ -98,7 +99,7 @@ section{scroll-margin-top:6rem}
 .sec-head p{margin:0;color:var(--slate);font-size:.9rem;max-width:32ch}
 
 /* ─────────────────────────  hero  ───────────────────────── */
-.hero{padding:clamp(6rem,13vh,8.5rem) 0 clamp(3rem,7vw,5rem);position:relative}
+.hero{padding:clamp(4.5rem,13vh,8.5rem) 0 clamp(2.5rem,7vw,5rem);position:relative}
 .hero__grid{display:grid;grid-template-columns:minmax(0,1fr) clamp(16rem,42%,28rem);
   gap:clamp(1rem,3vw,2.5rem);align-items:end}
 .hero h1{
@@ -168,7 +169,7 @@ section{scroll-margin-top:6rem}
 
 /* diagram panel */
 .panel{margin-top:1.7rem;background:var(--paper-2);border:1px solid var(--hair);border-radius:3px;padding:.9rem}
-.panel__bar{display:flex;align-items:center;justify-content:space-between;gap:.75rem;
+.panel__bar{display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap;
   margin-bottom:.35rem}
 .panel__bar p{margin:0;font-family:var(--mono);font-size:.72rem;color:var(--slate)}
 .run{
@@ -285,7 +286,7 @@ footer{border-top:1px solid #2B4655;margin-top:2.5rem;padding-top:1.2rem;
 .scroller::-webkit-scrollbar-thumb{background:var(--hair);border-radius:99px}
 .swipe{display:none;margin:.5rem 0 0;font-size:.74rem;color:var(--slate)}
 @media (max-width:860px){
-  .scroller svg.flow{min-width:34rem}
+  .scroller svg.flow{min-width:40rem}
   .swipe{display:block}
 }
 @media (max-width:620px){
@@ -299,8 +300,21 @@ footer{border-top:1px solid #2B4655;margin-top:2.5rem;padding-top:1.2rem;
 
 /* ─────────────────────────  responsive  ───────────────────────── */
 @media (max-width:980px){
-  .layout{grid-template-columns:1fr}
-  .rail{display:none}
+  /* the index becomes a sticky tab strip instead of disappearing */
+  .layout{display:block}
+  section{scroll-margin-top:7.5rem}
+  .rail{
+    position:sticky;top:2.9rem;z-index:40;align-self:auto;padding:.5rem 0;
+    margin:0 calc(var(--pad)*-1) 1.6rem;padding-left:var(--pad);padding-right:var(--pad);
+    background:color-mix(in srgb,var(--paper) 92%,transparent);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--hair);
+    overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;
+  }
+  .rail::-webkit-scrollbar{display:none}
+  .rail ol{display:flex;gap:1.15rem;width:max-content}
+  .rail a{white-space:nowrap;font-size:.83rem;padding:.35rem 0;border-bottom:2px solid transparent}
+  .rail a::before{display:none}
+  .rail a.on{border-bottom-color:var(--signal)}
   .hero__grid{grid-template-columns:1fr;align-items:start}
   .portrait{max-width:22rem;margin-top:1.5rem;margin-right:0}
 }
@@ -340,8 +354,8 @@ footer{border-top:1px solid #2B4655;margin-top:2.5rem;padding-top:1.2rem;
     <div class="hero__grid">
       <div>
         <h1><span><b>SHAIKH</b></span><span><b>FAISAL</b></span></h1>
-        <p class="lede">I build the half of the product nobody sees — the APIs, the pipelines,
-          and the AI that runs quietly inside them. Four years of it, in Bengaluru.</p>
+        <p class="lede">I build the half of the product nobody sees. The APIs, the pipelines,
+              and the AI that runs quietly inside them. Four years of it, in Bengaluru.</p>
         <dl class="facts">
           <div><dt>Experience</dt><dd>4+ years</dd></div>
           <div><dt>Role today</dt><dd>Leads a team</dd></div>
@@ -381,7 +395,8 @@ footer{border-top:1px solid #2B4655;margin-top:2.5rem;padding-top:1.2rem;
           <article>
             <h3>AI where it earns its place</h3>
             <p>RAG pipelines and agents are tools, not the product. I add them where they
-              remove real work — and keep a human in the loop where they shouldn't decide alone.</p>
+              remove real work, and keep a human in the loop where they shouldn't
+              decide alone.</p>
           </article>
           <article>
             <h3>Automation that pays rent</h3>
@@ -395,8 +410,8 @@ footer{border-top:1px solid #2B4655;margin-top:2.5rem;padding-top:1.2rem;
       <section id="systems">
         <div class="sec-head rv">
           <h2>Systems I built</h2>
-          <p>These run inside companies, so there's nothing public to click.
-            So I drew them instead — press run to watch a request move through.</p>
+          <p>These run inside companies, so there's nothing public to click. I drew them instead. Press run to watch a
+            request move through.</p>
         </div>
 
         <!-- 1. RAG support -->
@@ -404,10 +419,11 @@ footer{border-top:1px solid #2B4655;margin-top:2.5rem;padding-top:1.2rem;
           <div class="sys__top">
             <div class="sys__body">
               <h3>AI L1 support integration</h3>
-              <p class="sys__where">Winger IT Solutions — customer-facing, across the product suite</p>
-              <p>A support layer that answers first-line questions itself. Queries run through a
-                hybrid retrieval pipeline — semantic search for meaning, keyword search for exact
-                product terms and error codes — then get merged and reranked before an answer is written.</p>
+              <p class="sys__where">Winger IT Solutions, customer-facing across the product suite</p>
+              <p>A support layer that answers first-line questions itself. Queries run through a hybrid retrieval
+                pipeline. Semantic search handles meaning, keyword search catches exact
+                product terms and error codes, and the results are merged and reranked
+                before an answer is written.</p>
               <p>When confidence is low, nothing is guessed. The query is handed to a human with a
                 ticket already created, so no customer message quietly disappears.</p>
               <div class="result"><b>40%</b><span>of L1 queries resolved without a person touching them</span></div>
@@ -482,7 +498,7 @@ footer{border-top:1px solid #2B4655;margin-top:2.5rem;padding-top:1.2rem;
           <div class="sys__top">
             <div class="sys__body">
               <h3>GPS logistics lock</h3>
-              <p class="sys__where">Winger IT Solutions — container locks on vehicles in transit</p>
+              <p class="sys__where">Winger IT Solutions, container locks on vehicles in transit</p>
               <p>Transport containers used to open with a physical key, which means the key can be
                 copied, lost, or lent. I built the FastAPI services that replaced it: a driver
                 requests access, the backend authorises it and issues a one-time code that is only
@@ -539,7 +555,7 @@ footer{border-top:1px solid #2B4655;margin-top:2.5rem;padding-top:1.2rem;
               <div class="otp">
                 <div class="ring" id="ring" data-t="60"></div>
                 <div>
-                  <div class="otp__code" id="code">— — — — — —</div>
+                  <div class="otp__code" id="code">· · · · · ·</div>
                   <p class="otp__meta" id="otpmeta">Run the flow to issue a demo code.</p>
                 </div>
               </div>
@@ -552,10 +568,10 @@ footer{border-top:1px solid #2B4655;margin-top:2.5rem;padding-top:1.2rem;
           <div class="sys__top">
             <div class="sys__body">
               <h3>On-prem email validation pipeline</h3>
-              <p class="sys__where">Winger IT Solutions — internal, replacing a paid API</p>
+              <p class="sys__where">Winger IT Solutions, internal tooling that replaced a paid API</p>
               <p>Every lead list had to be validated through a third-party service that billed per
                 check. I designed and hosted an eight-stage pipeline that does the same work on our
-                own hardware — syntax, DNS and MX lookups, disposable and role-address detection,
+                own hardware: syntax, DNS and MX lookups, disposable and role-address detection,
                 catch-all handling, an SMTP probe, and a final deliverability score.</p>
               <p>It shipped, it runs on-prem, and the subscription was cancelled.</p>
               <div class="result"><b>₹0</b><span>recurring cost, where a per-check vendor bill used to sit</span></div>
@@ -569,7 +585,7 @@ footer{border-top:1px solid #2B4655;margin-top:2.5rem;padding-top:1.2rem;
               </div>
               <div class="scroller">
 <svg class="flow" id="mail" viewBox="0 0 660 230" role="img"
-                   aria-label="Diagram: an email address passes through eight validation stages — syntax, DNS, MX record, disposable check, role address check, catch-all detection, SMTP probe — ending in a deliverability score.">
+                   aria-label="Diagram: an email address passes through eight validation stages (syntax, DNS, MX record, disposable check, role address check, catch-all detection and SMTP probe) and ends in a deliverability score.">
                 <g class="node" data-step="0" transform="translate(0,20)">
                   <rect class="nbox" width="140" height="44" rx="3"></rect>
                   <text class="nlabel" x="12" y="20">address in</text>
@@ -636,7 +652,7 @@ footer{border-top:1px solid #2B4655;margin-top:2.5rem;padding-top:1.2rem;
           <div>
             <h4>Hardware asset tracker, on a bootable USB</h4>
             <p>A live Linux stick for an IT firm managing thousands of client machines. Boot it and
-              it spots swapped RAM or changed components in one to two minutes — no screwdriver,
+              it spots swapped RAM or changed components in one to two minutes. No screwdriver,
               no manual inspection.</p>
           </div>
         </div>
@@ -650,13 +666,13 @@ footer{border-top:1px solid #2B4655;margin-top:2.5rem;padding-top:1.2rem;
         </div>
         <ol class="tl rv">
           <li class="now">
-            <time>Jul 2023 — present</time>
+            <time>Jul 2023 to present</time>
             <h3>Software Development Engineer</h3>
             <p class="org">Winger IT Solutions</p>
             <ul>
               <li>Lead a team of engineers shipping custom software and AI-driven automation for clients.</li>
-              <li>Deploy and secure everything end to end — Docker containers, VMs across on-prem and
-                cloud VPS, access hardened with iptables and an Nginx reverse proxy.</li>
+              <li>Deploy and secure everything end to end: Docker containers, VMs across on-prem
+                and cloud VPS, with access hardened with iptables and an Nginx reverse proxy.</li>
               <li>Build and integrate backend APIs, generative AI models, and the workflows around them.</li>
               <li>Own delivery from planning and architecture through development, testing and deployment.</li>
               <li>Act as the technical point of contact for client stakeholders, turning what they
@@ -664,7 +680,7 @@ footer{border-top:1px solid #2B4655;margin-top:2.5rem;padding-top:1.2rem;
             </ul>
           </li>
           <li>
-            <time>Sep 2022 — Jun 2023</time>
+            <time>Sep 2022 to Jun 2023</time>
             <h3>Technical Analyst</h3>
             <p class="org">Blume Global</p>
             <ul>
@@ -675,7 +691,7 @@ footer{border-top:1px solid #2B4655;margin-top:2.5rem;padding-top:1.2rem;
             </ul>
           </li>
           <li>
-            <time>2018 — 2022</time>
+            <time>2018 to 2022</time>
             <h3>BE, Electronics and Communication</h3>
             <p class="org">Visvesvaraya Technological University, Bengaluru</p>
             <ul><li>CGPA 8.42. The hardware grounding is why the GPS lock and the bootable
@@ -727,15 +743,15 @@ footer{border-top:1px solid #2B4655;margin-top:2.5rem;padding-top:1.2rem;
         <div class="proof rv">
           <div class="talk">
             <h3>Spoke at AIDevCon India 2025</h3>
-            <p><q>The Role of AI in Modern Software Development</q> — on where AI actually belongs
-              in a build, and where adding it just adds risk.</p>
+            <p><q>The Role of AI in Modern Software Development</q>. A talk on where
+              AI actually belongs in a build, and where adding it just adds risk.</p>
           </div>
           <div>
             <h3>Certifications</h3>
             <ul>
-              <li>Zoho Creator Developer — Zoho</li>
-              <li>Cloud Technical Series: AI Deep Dive — Google</li>
-              <li>Python for Data Science, AI and Development — IBM</li>
+              <li>Zoho Creator Developer (Zoho)</li>
+              <li>Cloud Technical Series: AI Deep Dive (Google)</li>
+              <li>Python for Data Science, AI and Development (IBM)</li>
             </ul>
           </div>
           <div>
@@ -756,7 +772,7 @@ footer{border-top:1px solid #2B4655;margin-top:2.5rem;padding-top:1.2rem;
   <div class="contact__in">
     <h2 class="rv">Tell me what's<br>breaking. <em>I'll build it.</em></h2>
     <p class="rv">If you need someone who can take a vague requirement and return a running,
-      deployed, secured system — that's the work I like most. Reply to anything below and
+      deployed, secured system, that's the work I like most. Reply to anything below and
       you'll hear back from me directly.</p>
     <div class="links rv">
       <a href="mailto:shaikfa66@gmail.com"><small>Email</small><b>shaikfa66@gmail.com</b></a>
@@ -768,7 +784,7 @@ footer{border-top:1px solid #2B4655;margin-top:2.5rem;padding-top:1.2rem;
       <a href="resume.pdf" download><small>Resume</small><b>Download PDF</b></a>
     </div>
     <footer>
-      <span>Bengaluru, India — working IST, flexible for overlap.</span>
+      <span>Bengaluru, India. Working IST, flexible for overlap.</span>
       <span>Built from scratch. No template.</span>
     </footer>
   </div>
